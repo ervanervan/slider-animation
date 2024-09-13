@@ -85,7 +85,7 @@ function App() {
               {selectedCharacter.details}
             </p>
             <button className="mt-5 w-fit border px-5 py-2.5 rounded-md">
-              See details
+              More details
             </button>
           </motion.div>
 
