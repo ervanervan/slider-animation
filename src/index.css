@@ -7,3 +7,28 @@
 html {
   font-family: "Kiwi Maru", serif;
 }
+
+@keyframes growImage {
+  from {
+    width: 40%;
+    height: 52%;
+    left: 0;
+    bottom: 0;
+    border-radius: 0.5rem;
+  }
+  to {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
+}
+
+.image-enter {
+  animation: growImage 0.5s linear forwards;
+}
+
+.image-exit {
+  animation: growImage 0.5s linear reverse forwards;
+}

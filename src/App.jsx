@@ -66,7 +66,7 @@ function App() {
           transition={{ duration: 0.5 }} // Animation duration
         />
 
-        <div className="container flex flex-col justify-between h-dvh px-10 mx-auto text-white pt-20 pb-10">
+        <div className="container flex flex-col justify-between h-dvh px-5 md:px-10 mx-auto text-white py-8 md:pt-20 md:pb-10">
           <motion.div
             className="flex flex-col gap-2 justify-start"
             key={selectedCharacter.name} // Ensure animation happens when character changes
