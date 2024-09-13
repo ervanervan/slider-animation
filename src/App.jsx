@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+
 import wallpaper1 from "./assets/wallpaper 1.jpg";
 import wallpaper2 from "./assets/wallpaper 2.jpg";
 import wallpaper3 from "./assets/wallpaper 3.jpg";
@@ -52,13 +54,27 @@ function App() {
   return (
     <>
       <div className="w-full h-dvh relative">
-        <img
+        {/* Background Image with Framer Motion Animation */}
+        <motion.img
+          key={selectedCharacter.wallpaper} // Ensure animation happens when wallpaper changes
           src={selectedCharacter.wallpaper}
           alt={selectedCharacter.name}
           className="absolute -z-10 top-0 w-full h-dvh object-cover"
+          initial={{ opacity: 0 }} // Starting opacity for fade-in effect
+          animate={{ opacity: 1 }} // Ending opacity for fade-in effect
+          exit={{ opacity: 0 }} // Fade-out effect when unmounting
+          transition={{ duration: 0.5 }} // Animation duration
         />
+
         <div className="container flex flex-col justify-between h-dvh px-10 mx-auto text-white pt-20 pb-10">
-          <div className="flex flex-col gap-2 justify-start">
+          <motion.div
+            className="flex flex-col gap-2 justify-start"
+            key={selectedCharacter.name} // Ensure animation happens when character changes
+            initial={{ opacity: 0, y: 20 }} // Starting animation: fade in from below
+            animate={{ opacity: 1, y: 0 }} // Animate to final position
+            exit={{ opacity: 0, y: 20 }} // Fade-out effect on exit
+            transition={{ duration: 0.5 }} // Animation duration
+          >
             <h1 className="uppercase tracking-[.75em] font-bold text-base">
               demon slayer
             </h1>
@@ -71,7 +87,7 @@ function App() {
             <button className="mt-5 w-fit border px-5 py-2.5 rounded-md">
               More details
             </button>
-          </div>
+          </motion.div>
 
           <div className="flex justify-end gap-5">
             {characters.map((character) => (
