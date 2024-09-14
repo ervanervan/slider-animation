@@ -89,7 +89,7 @@ function App() {
             </button>
           </motion.div>
 
-          <div className="flex justify-end gap-5">
+          <div className="flex items-start md:justify-end gap-5 overflow-x-auto md:overflow-x-visible scrollbar-hide">
             {characters.map((character) => (
               <CharacterCard
                 key={character.id}

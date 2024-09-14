@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const CharacterCard = ({ character, onClick, isSelected }) => {
   return (
     <motion.div
-      className="relative w-40 h-52 rounded-lg border overflow-hidden cursor-pointer"
+      className="relative w-40 h-52 flex flex-shrink-0 rounded-lg border overflow-hidden cursor-pointer"
       onClick={() => onClick(character)}
       whileHover={{ scale: 1.05 }} // Add scale on hover for a nice effect
       initial={{ scale: 0.9, opacity: 0 }} // Initial scale and opacity for entering
