@@ -45,6 +45,7 @@ function App() {
 
   const [selectedCharacter, setSelectedCharacter] = useState(characters[0]);
 
+  // Function to handle character click
   const handleCharacterClick = (character) => {
     setSelectedCharacter(character);
   };
