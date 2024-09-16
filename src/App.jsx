@@ -43,7 +43,6 @@ function App() {
     },
   ];
 
-  // State to keep track of the selected character
   const [selectedCharacter, setSelectedCharacter] = useState(characters[0]);
 
   // Function to handle character click
