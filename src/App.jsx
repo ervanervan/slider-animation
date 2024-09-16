@@ -52,7 +52,6 @@ function App() {
   return (
     <>
       <div className="w-full h-dvh relative">
-        {/* Background Image with Framer Motion Animation */}
         <motion.img
           key={selectedCharacter.wallpaper} // Ensure animation happens when wallpaper changes
           src={selectedCharacter.wallpaper}
