@@ -9,7 +9,7 @@ import wallpaper4 from "./assets/wallpaper 4.jpg";
 import CharacterCard from "./component/CharacterCard";
 
 function App() {
-  
+  // Dummy data for the characters
   const characters = [
     {
       id: 1,
