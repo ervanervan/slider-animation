@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { motion } from "framer-motion";
 
 import wallpaper1 from "./assets/wallpaper 1.jpg";
