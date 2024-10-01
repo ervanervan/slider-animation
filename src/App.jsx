@@ -119,7 +119,7 @@ function App() {
                 {">"}
               </button>
             </div>
-            <div className="flex gap-5 overflow-x-auto md:overflow-x-visible scrollbar-hide">
+            <div className="flex gap-5">
               {characters.map((character, index) => (
                 <CharacterCard
                   key={character.id}
