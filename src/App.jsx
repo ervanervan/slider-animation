@@ -105,7 +105,7 @@ function App() {
           </motion.div>
 
           <div className="flex flex-col md:flex-row items-start md:justify-between gap-5 overflow-x-auto md:overflow-x-visible scrollbar-hide">
-            <div className="flex gap-5 items-center">
+            <div className="flex gap-5 items-center ml-auto md:ml-0">
               <button
                 onClick={handlePrevClick}
                 className="border bg-transparent rounded-full py-2.5 px-4"
