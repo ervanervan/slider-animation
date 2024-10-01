@@ -104,22 +104,25 @@ function App() {
             </button>
           </motion.div>
 
-          <div className="flex flex-col md:flex-row items-start md:justify-between gap-5 overflow-x-auto md:overflow-x-visible scrollbar-hide">
-            <div className="flex gap-5 items-center ml-auto md:ml-0">
+          {/* Buttons remain static at the top */}
+          <div>
+            <div className="flex justify-end gap-5 mb-5">
               <button
                 onClick={handlePrevClick}
-                className="border bg-transparent rounded-full py-3 px-4"
+                className="border bg-transparent rounded-full py-2 px-4"
               >
                 {"<"}
               </button>
               <button
                 onClick={handleNextClick}
-                className="border bg-transparent rounded-full py-3 px-4"
+                className="border bg-transparent rounded-full py-2 px-4"
               >
                 {">"}
               </button>
             </div>
-            <div className="flex gap-5 overflow-x-auto md:overflow-x-visible scrollbar-hide">
+
+            {/* Scrollable Character Cards */}
+            <div className="flex gap-5 overflow-x-auto scrollbar-hide">
               {characters.map((character, index) => (
                 <CharacterCard
                   key={character.id}
