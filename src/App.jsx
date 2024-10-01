@@ -90,14 +90,24 @@ function App() {
             </button>
           </motion.div>
 
-          <div className="flex items-start md:justify-end gap-5 overflow-x-auto md:overflow-x-visible scrollbar-hide">
-            {characters.map((character) => (
-              <CharacterCard
-                key={character.id}
-                character={character}
-                onClick={handleCharacterClick}
-              />
-            ))}
+          <div className="flex items-start md:justify-between gap-5 overflow-x-auto md:overflow-x-visible scrollbar-hide">
+            <div className="flex gap-5 items-center">
+              <button className="border bg-transparent rounded-full p-2.5">
+                panah kiri
+              </button>
+              <button className="border bg-transparent rounded-full p-2.5">
+                panah kanan
+              </button>
+            </div>
+            <div className="flex gap-5 overflow-x-auto md:overflow-x-visible scrollbar-hide">
+              {characters.map((character) => (
+                <CharacterCard
+                  key={character.id}
+                  character={character}
+                  onClick={handleCharacterClick}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
