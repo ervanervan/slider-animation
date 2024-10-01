@@ -45,11 +45,25 @@ function App() {
   ];
 
   // State to keep track of the selected character
-  const [selectedCharacter, setSelectedCharacter] = useState(characters[0]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   // Function to handle character click
-  const handleCharacterClick = (character) => {
-    setSelectedCharacter(character);
+  const handleCharacterClick = (index) => {
+    setSelectedIndex(index);
+  };
+
+  // Function to go to the previous character
+  const handlePrevClick = () => {
+    setSelectedIndex((prevIndex) =>
+      prevIndex === 0 ? characters.length - 1 : prevIndex - 1
+    );
+  };
+
+  // Function to go to the next character
+  const handleNextClick = () => {
+    setSelectedIndex((prevIndex) =>
+      prevIndex === characters.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
@@ -57,9 +71,9 @@ function App() {
       <div className="w-full h-dvh relative">
         {/* Background Image with Framer Motion Animation */}
         <motion.img
-          key={selectedCharacter.wallpaper} // Ensure animation happens when wallpaper changes
-          src={selectedCharacter.wallpaper}
-          alt={selectedCharacter.name}
+          key={characters[selectedIndex].wallpaper} // Ensure animation happens when wallpaper changes
+          src={characters[selectedIndex].wallpaper}
+          alt={characters[selectedIndex].name}
           className="absolute -z-10 top-0 w-full h-dvh object-cover"
           initial={{ opacity: 0 }} // Starting opacity for fade-in effect
           animate={{ opacity: 1 }} // Ending opacity for fade-in effect
@@ -70,7 +84,7 @@ function App() {
         <div className="container flex flex-col justify-between h-dvh px-5 md:px-10 mx-auto text-white py-8 md:pt-20 md:pb-10">
           <motion.div
             className="flex flex-col gap-2 justify-start"
-            key={selectedCharacter.name} // Ensure animation happens when character changes
+            key={characters[selectedIndex].name} // Ensure animation happens when character changes
             initial={{ opacity: 0, y: 20 }} // Starting animation: fade in from below
             animate={{ opacity: 1, y: 0 }} // Animate to final position
             exit={{ opacity: 0, y: 20 }} // Fade-out effect on exit
@@ -80,10 +94,10 @@ function App() {
               demon slayer
             </h1>
             <h2 className="uppercase font-extrabold text-5xl my-2">
-              {selectedCharacter.name}
+              {characters[selectedIndex].name}
             </h2>
             <p className="w-full md:w-[45%] font-medium">
-              {selectedCharacter.details}
+              {characters[selectedIndex].details}
             </p>
             <button className="mt-5 w-fit border px-5 py-2.5 rounded-md">
               More details
@@ -92,19 +106,25 @@ function App() {
 
           <div className="flex items-start md:justify-between gap-5 overflow-x-auto md:overflow-x-visible scrollbar-hide">
             <div className="flex gap-5 items-center">
-              <button className="border bg-transparent rounded-full p-2.5">
-                panah kiri
+              <button
+                onClick={handlePrevClick}
+                className="border bg-transparent rounded-full p-2.5"
+              >
+                &#8592; {/* Left Arrow */}
               </button>
-              <button className="border bg-transparent rounded-full p-2.5">
-                panah kanan
+              <button
+                onClick={handleNextClick}
+                className="border bg-transparent rounded-full p-2.5"
+              >
+                &#8594; {/* Right Arrow */}
               </button>
             </div>
             <div className="flex gap-5 overflow-x-auto md:overflow-x-visible scrollbar-hide">
-              {characters.map((character) => (
+              {characters.map((character, index) => (
                 <CharacterCard
                   key={character.id}
                   character={character}
-                  onClick={handleCharacterClick}
+                  onClick={() => handleCharacterClick(index)}
                 />
               ))}
             </div>
