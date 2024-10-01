@@ -104,7 +104,7 @@ function App() {
             </button>
           </motion.div>
 
-          <div className="flex items-start md:justify-between gap-5 overflow-x-auto md:overflow-x-visible scrollbar-hide">
+          <div className="flex flex-col md:flex-row items-start md:justify-between gap-5 overflow-x-auto md:overflow-x-visible scrollbar-hide">
             <div className="flex gap-5 items-center">
               <button
                 onClick={handlePrevClick}
