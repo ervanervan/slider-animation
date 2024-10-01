@@ -104,9 +104,8 @@ function App() {
             </button>
           </motion.div>
 
-          {/* Buttons remain static at the top */}
-          <div>
-            <div className="flex justify-end gap-5 mb-5">
+          <div className="flex flex-col md:flex-row items-start md:justify-between gap-5 overflow-x-auto md:overflow-x-visible scrollbar-hide">
+            <div className="gap-5 items-center hidden lg:flex">
               <button
                 onClick={handlePrevClick}
                 className="border bg-transparent rounded-full py-2 px-4"
@@ -120,9 +119,7 @@ function App() {
                 {">"}
               </button>
             </div>
-
-            {/* Scrollable Character Cards */}
-            <div className="flex gap-5 overflow-x-auto scrollbar-hide">
+            <div className="flex gap-5 overflow-x-auto md:overflow-x-visible scrollbar-hide">
               {characters.map((character, index) => (
                 <CharacterCard
                   key={character.id}
