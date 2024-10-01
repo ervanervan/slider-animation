@@ -108,13 +108,13 @@ function App() {
             <div className="flex gap-5 items-center">
               <button
                 onClick={handlePrevClick}
-                className="border bg-transparent rounded-full py-2.5"
+                className="border bg-transparent rounded-full py-2.5 px-4"
               >
                 {"<"}
               </button>
               <button
                 onClick={handleNextClick}
-                className="border bg-transparent rounded-full py-2.5"
+                className="border bg-transparent rounded-full py-2.5 px-4"
               >
                 {">"}
               </button>
