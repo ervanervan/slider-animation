@@ -110,13 +110,13 @@ function App() {
                 onClick={handlePrevClick}
                 className="border bg-transparent rounded-full p-2.5"
               >
-                &#8592; {/* Left Arrow */}
+                {"<"} {/* Left Arrow */}
               </button>
               <button
                 onClick={handleNextClick}
                 className="border bg-transparent rounded-full p-2.5"
               >
-                &#8594; {/* Right Arrow */}
+                {">"} {/* Right Arrow */}
               </button>
             </div>
             <div className="flex gap-5 overflow-x-auto md:overflow-x-visible scrollbar-hide">
