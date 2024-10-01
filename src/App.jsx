@@ -110,7 +110,7 @@ function App() {
                 onClick={handlePrevClick}
                 className="border bg-transparent rounded-full p-2.5"
               >
-                {"<"} {/* Left Arrow */}
+                {"<"}
               </button>
               <button
                 onClick={handleNextClick}
